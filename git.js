@@ -88,5 +88,5 @@ class Git {
 // tests
 (async () => {
   const git = new Git('./');
-  console.log((await git.add()));
+  console.log((await git.commit('hello')));
 })();
