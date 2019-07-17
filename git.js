@@ -99,6 +99,10 @@ class Git {
     await this.exec(['push']);
   }
 
+  async pushUpStream(name) {
+    await this.exec(['push', '--set-upstream', 'origin', name]);
+  }
+
   /**
    *
    * @param {String} name branch name
@@ -118,8 +122,7 @@ class Git {
 (async () => {
   const git = new Git('./');
   console.log((await git.getBranches()));
-  await git.checkout('feat/addCheckoutFunction', true);
   await git.add();
   await git.commit('feat: add checkout');
-  await git.push();
+  await git.pushUpStream();
 })();
