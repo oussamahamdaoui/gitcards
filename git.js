@@ -120,8 +120,8 @@ class Git {
     await this.exec(cmd);
   }
 
-  async createGithubPR() {
-    const cmd = [`${__dirname}/hub`, 'pull-request'];
+  async createGithubPR(text) {
+    const cmd = [`${__dirname}/hub`, 'pull-request', '-m', text];
     await this.exec(cmd, '');
   }
 }
@@ -135,5 +135,5 @@ const ENV = require('./tokens.json');
   await git.add();
   await git.commit('feat: add create pr');
   await git.push();
-  await git.createGithubPR();
+  await git.createGithubPR('add create pr');
 })();
