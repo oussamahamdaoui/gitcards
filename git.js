@@ -8,6 +8,7 @@ const { exec } = require('child_process');
 const ex = (dir, cmd, first = 'git') => new Promise((resolve, reject) => {
   exec([first, ...cmd].join(' '), {
     cwd: dir,
+    env: this.env,
   }, (error, stdout, stderr) => {
     // console.log({ stdout, stderr });
 
@@ -19,13 +20,15 @@ const ex = (dir, cmd, first = 'git') => new Promise((resolve, reject) => {
   });
 });
 
+
 class Git {
   /**
    *
    * @param {String} dir
    */
-  constructor(dir) {
+  constructor(dir, env) {
     this.dir = dir;
+    this.env = env;
   }
 
   /**
@@ -124,8 +127,10 @@ class Git {
 }
 
 // tests
+const ENV = require('./tokens.json');
+
 (async () => {
-  const git = new Git('./');
+  const git = new Git('./', ENV);
   console.log((await git.getBranches()));
   await git.add();
   await git.commit('feat: add create pr');
