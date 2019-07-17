@@ -73,7 +73,7 @@ class Git {
    * @param {String} message
    * @param {boolean} force
    */
-  async commit(message, force = false) {
+  async commit(message) {
     const cmd = ['commit', '-m', `"${message}"`];
     await this.exec(cmd);
   }
