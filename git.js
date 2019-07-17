@@ -123,6 +123,6 @@ class Git {
   const git = new Git('./');
   console.log((await git.getBranches()));
   await git.add();
-  await git.commit('feat: add checkout');
-  await git.pushUpStream();
+  await git.commit('feat: add checkout and pushUpstream');
+  await git.pushUpStream('feat/addCheckoutFunction');
 })();
