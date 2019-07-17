@@ -101,4 +101,5 @@ class Git {
   console.log((await git.getBranches()));
   await git.add();
   await git.commit('feat: comand add and push');
+  await git.push();
 })();
