@@ -8,13 +8,17 @@ class Git {
    */
   constructor(dir, env) {
     this.dir = dir;
-    this.env = env;
+    this.env = {
+      ...env,
+      HOME: process.env.HOME,
+      PATH: process.env.PATH,
+    };
   }
 
   /**
    *
    * @param {[String]} cmd the command to be executed no need to specify git
-   * @param {[String]} prefix default is git but you can set it to ''
+   * @param {String} prefix default is git but you can set it to ''
    * @return {String} the stdout string
    *
    */
@@ -124,8 +128,9 @@ class Git {
 const ENV = require('./tokens.json');
 
 (async () => {
-  const git = new Git('./', ENV);
+  const git = new Git('/Users/oussamahamdaoui/Documents/gitCards/', ENV);
   console.log((await git.getBranches()));
+
   await git.add();
   await git.commit('feat: add create pr');
   await git.push();
