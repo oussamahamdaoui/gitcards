@@ -71,22 +71,28 @@ class Git {
   /**
    *
    * @param {String} message
-   * @param {boolean} force
    */
   async commit(message) {
     const cmd = ['commit', '-m', `"${message}"`];
     await this.exec(cmd);
   }
 
-  async add(files = ['.']) {
-    const cmd = ['add', ...files];
-    await this.exec(cmd);
+
+  async getCurrentBranch() {
+    const stdout = await this.exec(['branch', '--all']);
+    return stdout
+      .split(/\n/)
+      .find(e => e.indexOf('*') !== -1)
+      .replace(/\*|\s/g, '');
+  }
+
+  async push() {
+    await this.exec(['push']);
   }
 }
-
 
 // tests
 (async () => {
   const git = new Git('./');
-  console.log((await git.commit('hello')));
+  console.log((await git.getBranches()));
 })();
