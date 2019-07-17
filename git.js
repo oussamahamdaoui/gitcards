@@ -5,8 +5,8 @@ const { exec } = require('child_process');
  * @param {String} dir the directory the comand should be executed
  * @param {[String]} cmd
  */
-const ex = (dir, cmd) => new Promise((resolve, reject) => {
-  exec(['git', ...cmd].join(' '), {
+const ex = (dir, cmd, first = 'git') => new Promise((resolve, reject) => {
+  exec([first, ...cmd].join(' '), {
     cwd: dir,
   }, (error, stdout, stderr) => {
     // console.log({ stdout, stderr });
@@ -31,11 +31,12 @@ class Git {
   /**
    *
    * @param {[String]} cmd the command to be executed no need to specify git
-   *
+   * @param {[String]} prefix default is git but you can set it to ''
    * @return {String} the stdout string
+   *
    */
-  async exec(cmd) {
-    return ex(this.dir, cmd);
+  async exec(cmd, prefix) {
+    return ex(this.dir, cmd, prefix);
   }
 
   /**
@@ -86,6 +87,10 @@ class Git {
       .replace(/\*|\s/g, '');
   }
 
+  /**
+   *
+   * @param {[String]} flies list of files default all
+   */
   async add(flies = ['.']) {
     await this.exec(['add', ...flies]);
   }
@@ -93,13 +98,28 @@ class Git {
   async push() {
     await this.exec(['push']);
   }
+
+  /**
+   *
+   * @param {String} name branch name
+   * @param {boolean} create if true creates the branch
+   */
+  async checkout(name, create) {
+    const cmd = ['checkout'];
+    if (create) {
+      cmd.push('-b');
+    }
+    cmd.push(name);
+    await this.exec(cmd);
+  }
 }
 
 // tests
 (async () => {
   const git = new Git('./');
   console.log((await git.getBranches()));
+  await git.checkout('feat/addCheckoutFunction', true);
   await git.add();
-  await git.commit('feat: comand add and push');
+  await git.commit('feat: add checkout');
   await git.push();
 })();
