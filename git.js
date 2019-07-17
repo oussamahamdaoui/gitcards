@@ -19,6 +19,7 @@ class Git {
    *
    */
   async exec(cmd, prefix = 'git') {
+    console.log([prefix, ...cmd]);
     return new Promise((resolve, reject) => {
       exec([prefix, ...cmd].join(' '), {
         cwd: this.dir,
