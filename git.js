@@ -1,25 +1,5 @@
 const { exec } = require('child_process');
 
-/**
- *
- * @param {String} dir the directory the comand should be executed
- * @param {[String]} cmd
- */
-const ex = (dir, cmd, first = 'git') => new Promise((resolve, reject) => {
-  exec([first, ...cmd].join(' '), {
-    cwd: dir,
-    env: this.env,
-  }, (error, stdout, stderr) => {
-    // console.log({ stdout, stderr });
-
-    if (error) {
-      reject(stderr);
-      return;
-    }
-    resolve(stdout);
-  });
-});
-
 
 class Git {
   /**
@@ -38,8 +18,21 @@ class Git {
    * @return {String} the stdout string
    *
    */
-  async exec(cmd, prefix) {
-    return ex(this.dir, cmd, prefix);
+  async exec(cmd, prefix = 'git') {
+    return new Promise((resolve, reject) => {
+      exec([prefix, ...cmd].join(' '), {
+        cwd: this.dir,
+        env: this.env,
+      }, (error, stdout, stderr) => {
+        // console.log({ stdout, stderr });
+
+        if (error) {
+          reject(stderr);
+          return;
+        }
+        resolve(stdout);
+      });
+    });
   }
 
   /**
