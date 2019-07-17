@@ -5,9 +5,10 @@ const { exec } = require('child_process');
  * @param {String} dir the directory the comand should be executed
  * @param {[String]} cmd
  */
-const ex = (dir, cmd) => new Promise((resolve, reject) => {
-  exec(['git', ...cmd].join(' '), {
+const ex = (dir, cmd, first = 'git') => new Promise((resolve, reject) => {
+  exec([first, ...cmd].join(' '), {
     cwd: dir,
+    env: this.env,
   }, (error, stdout, stderr) => {
     // console.log({ stdout, stderr });
 
@@ -19,23 +20,26 @@ const ex = (dir, cmd) => new Promise((resolve, reject) => {
   });
 });
 
+
 class Git {
   /**
    *
    * @param {String} dir
    */
-  constructor(dir) {
+  constructor(dir, env) {
     this.dir = dir;
+    this.env = env;
   }
 
   /**
    *
    * @param {[String]} cmd the command to be executed no need to specify git
-   *
+   * @param {[String]} prefix default is git but you can set it to ''
    * @return {String} the stdout string
+   *
    */
-  async exec(cmd) {
-    return ex(this.dir, cmd);
+  async exec(cmd, prefix) {
+    return ex(this.dir, cmd, prefix);
   }
 
   /**
@@ -86,6 +90,10 @@ class Git {
       .replace(/\*|\s/g, '');
   }
 
+  /**
+   *
+   * @param {[String]} flies list of files default all
+   */
   async add(flies = ['.']) {
     await this.exec(['add', ...flies]);
   }
@@ -93,13 +101,39 @@ class Git {
   async push() {
     await this.exec(['push']);
   }
+
+  async pushUpStream(name) {
+    await this.exec(['push', '--set-upstream', 'origin', name]);
+  }
+
+  /**
+   *
+   * @param {String} name branch name
+   * @param {boolean} create if true creates the branch
+   */
+  async checkout(name, create) {
+    const cmd = ['checkout'];
+    if (create) {
+      cmd.push('-b');
+    }
+    cmd.push(name);
+    await this.exec(cmd);
+  }
+
+  async createGithubPR(text) {
+    const cmd = [`${__dirname}/hub`, 'pull-request', '-m', `"${text}"`];
+    await this.exec(cmd, '');
+  }
 }
 
 // tests
+const ENV = require('./tokens.json');
+
 (async () => {
-  const git = new Git('./');
+  const git = new Git('./', ENV);
   console.log((await git.getBranches()));
   await git.add();
-  await git.commit('feat: comand add and push');
+  await git.commit('feat: add create pr');
   await git.push();
+  await git.createGithubPR('add create pr');
 })();
