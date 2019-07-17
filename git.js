@@ -119,7 +119,7 @@ class Git {
 
   async createGithubPR() {
     const cmd = [`${__dirname}/hub`, 'pull-request'];
-    await this.exec(cmd);
+    await this.exec(cmd, '');
   }
 }
 
