@@ -116,6 +116,11 @@ class Git {
     cmd.push(name);
     await this.exec(cmd);
   }
+
+  async createGithubPR() {
+    const cmd = [`${__dirname}/hub`, 'pull-request'];
+    await this.exec(cmd);
+  }
 }
 
 // tests
@@ -123,6 +128,7 @@ class Git {
   const git = new Git('./');
   console.log((await git.getBranches()));
   await git.add();
-  await git.commit('feat: add checkout and pushUpstream');
-  await git.pushUpStream('feat/addCheckoutFunction');
+  await git.commit('feat: add create pr');
+  await git.push();
+  await git.createGithubPR();
 })();
