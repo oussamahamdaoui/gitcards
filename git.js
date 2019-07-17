@@ -86,6 +86,10 @@ class Git {
       .replace(/\*|\s/g, '');
   }
 
+  async add(flies = ['.']) {
+    await this.exec(['add', ...flies]);
+  }
+
   async push() {
     await this.exec(['push']);
   }
@@ -95,4 +99,6 @@ class Git {
 (async () => {
   const git = new Git('./');
   console.log((await git.getBranches()));
+  await git.add();
+  await git.commit('feat: comand add and push');
 })();
