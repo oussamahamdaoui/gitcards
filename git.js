@@ -1,24 +1,81 @@
 const { exec } = require('child_process');
 
-/**
- *
- * @param {String} dir the directory the comand should be executed
- * @param {[String]} cmd
- */
-const ex = (dir, cmd, first = 'git') => new Promise((resolve, reject) => {
-  exec([first, ...cmd].join(' '), {
-    cwd: dir,
-    env: this.env,
-  }, (error, stdout, stderr) => {
-    // console.log({ stdout, stderr });
+const GitErrorCodes = {
+  BadConfigFile: 'BadConfigFile',
+  AuthenticationFailed: 'AuthenticationFailed',
+  NoUserNameConfigured: 'NoUserNameConfigured',
+  NoUserEmailConfigured: 'NoUserEmailConfigured',
+  NoRemoteRepositorySpecified: 'NoRemoteRepositorySpecified',
+  NotAGitRepository: 'NotAGitRepository',
+  NotAtRepositoryRoot: 'NotAtRepositoryRoot',
+  Conflict: 'Conflict',
+  StashConflict: 'StashConflict',
+  UnmergedChanges: 'UnmergedChanges',
+  PushRejected: 'PushRejected',
+  RemoteConnectionError: 'RemoteConnectionError',
+  DirtyWorkTree: 'DirtyWorkTree',
+  CantOpenResource: 'CantOpenResource',
+  GitNotFound: 'GitNotFound',
+  CantCreatePipe: 'CantCreatePipe',
+  CantAccessRemote: 'CantAccessRemote',
+  RepositoryNotFound: 'RepositoryNotFound',
+  RepositoryIsLocked: 'RepositoryIsLocked',
+  BranchNotFullyMerged: 'BranchNotFullyMerged',
+  NoRemoteReference: 'NoRemoteReference',
+  InvalidBranchName: 'InvalidBranchName',
+  BranchAlreadyExists: 'BranchAlreadyExists',
+  NoLocalChanges: 'NoLocalChanges',
+  NoStashFound: 'NoStashFound',
+  LocalChangesOverwritten: 'LocalChangesOverwritten',
+  NoUpstreamBranch: 'NoUpstreamBranch',
+  IsInSubmodule: 'IsInSubmodule',
+  WrongCase: 'WrongCase',
+  CantLockRef: 'CantLockRef',
+  CantRebaseMultipleBranches: 'CantRebaseMultipleBranches',
+  PatchDoesNotApply: 'PatchDoesNotApply',
+  NoPathFound: 'NoPathFound',
+};
 
-    if (error) {
-      reject(stderr);
-      return;
-    }
-    resolve(stdout);
-  });
-});
+
+const getGitErrorCode = (stderr) => {
+  if (/Another git process seems to be running in this repository|If no other git process is currently running/.test(stderr)) {
+    return GitErrorCodes.RepositoryIsLocked;
+  }
+  if (/Authentication failed/.test(stderr)) {
+    return GitErrorCodes.AuthenticationFailed;
+  }
+  if (/Not a git repository/i.test(stderr)) {
+    return GitErrorCodes.NotAGitRepository;
+  }
+  if (/bad config file/.test(stderr)) {
+    return GitErrorCodes.BadConfigFile;
+  }
+  if (/cannot make pipe for command substitution|cannot create standard input pipe/.test(stderr)) {
+    return GitErrorCodes.CantCreatePipe;
+  }
+  if (/Repository not found/.test(stderr)) {
+    return GitErrorCodes.RepositoryNotFound;
+  }
+  if (/unable to access/.test(stderr)) {
+    return GitErrorCodes.CantAccessRemote;
+  }
+  if (/branch '.+' is not fully merged/.test(stderr)) {
+    return GitErrorCodes.BranchNotFullyMerged;
+  }
+  if (/Couldn\'t find remote ref/.test(stderr)) {
+    return GitErrorCodes.NoRemoteReference;
+  }
+  if (/A branch named '.+' already exists/.test(stderr)) {
+    return GitErrorCodes.BranchAlreadyExists;
+  }
+  if (/'.+' is not a valid branch name/.test(stderr)) {
+    return GitErrorCodes.InvalidBranchName;
+  }
+  if (/Please,? commit your changes or stash them/.test(stderr)) {
+    return GitErrorCodes.DirtyWorkTree;
+  }
+  return stderr;
+};
 
 
 class Git {
@@ -28,18 +85,35 @@ class Git {
    */
   constructor(dir, env) {
     this.dir = dir;
-    this.env = env;
+    this.env = {
+      ...env,
+      HOME: process.env.HOME,
+      PATH: process.env.PATH,
+    };
   }
 
   /**
    *
    * @param {[String]} cmd the command to be executed no need to specify git
-   * @param {[String]} prefix default is git but you can set it to ''
+   * @param {String} prefix default is git but you can set it to ''
    * @return {String} the stdout string
    *
    */
-  async exec(cmd, prefix) {
-    return ex(this.dir, cmd, prefix);
+  async exec(cmd, prefix = 'git') {
+    return new Promise((resolve, reject) => {
+      exec([prefix, ...cmd].join(' '), {
+        cwd: this.dir,
+        env: this.env,
+      }, (error, stdout, stderr) => {
+        // console.log({ stdout, stderr });
+
+        if (error) {
+          reject(getGitErrorCode(stderr));
+          return;
+        }
+        resolve(stdout);
+      });
+    });
   }
 
   /**
@@ -103,7 +177,13 @@ class Git {
   }
 
   async pushUpStream(name) {
-    await this.exec(['push', '--set-upstream', 'origin', name]);
+    let branchName;
+    if (!name) {
+      branchName = await this.getCurrentBranch();
+    } else {
+      branchName = name;
+    }
+    await this.exec(['push', '--set-upstream', 'origin', branchName]);
   }
 
   /**
@@ -124,16 +204,18 @@ class Git {
     const cmd = [`${__dirname}/hub`, 'pull-request', '-m', `"${text}"`];
     await this.exec(cmd, '');
   }
+
+  async getGraph() {
+    const cmd = ['log', '--all', '--date-order', '--pretty="%h|%p|%d"'];
+    const stdout = await this.exec(cmd);
+    return stdout;
+  }
 }
 
 // tests
 const ENV = require('./tokens.json');
 
 (async () => {
-  const git = new Git('./', ENV);
-  console.log((await git.getBranches()));
-  await git.add();
-  await git.commit('feat: add create pr');
-  await git.push();
-  await git.createGithubPR('add create pr');
+  const git = new Git('/Users/oussamahamdaoui/Documents/gitCards/', ENV);
+  console.log((await git.getGraph()));
 })();
