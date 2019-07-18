@@ -101,7 +101,13 @@ class Git {
   }
 
   async pushUpStream(name) {
-    await this.exec(['push', '--set-upstream', 'origin', name]);
+    let branchName;
+    if (!name) {
+      branchName = await this.getCurrentBranch();
+    } else {
+      branchName = name;
+    }
+    await this.exec(['push', '--set-upstream', 'origin', branchName]);
   }
 
   /**
