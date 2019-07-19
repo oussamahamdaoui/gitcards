@@ -1,6 +1,26 @@
 {
   "source": "./src",
-  "includes": ["\\.js$","\\.mjs$"],
+  "includes": [
+    "\\.js$",
+    "\\.mjs$"
+  ],
   "destination": "./docs",
-  "plugins": [{"name": "esdoc-standard-plugin"}, {"name": "esdoc-ecmascript-proposal-plugin", "option": {"all": true}}]
+  "plugins": [
+    {
+      "name": "esdoc-standard-plugin",
+      "brand": {
+        "title": "Gitcards",
+        "description": "this is awesome library",
+        "repository": "https://github.com/oussamahamdaoui/gitcards",
+        "site": "https://oussamahamdaoui.github.io/gitcards/",
+        "author": "Oussama Hamdaoui"
+      }
+    },
+    {
+      "name": "esdoc-ecmascript-proposal-plugin",
+      "option": {
+        "all": true
+      }
+    }
+  ]
 }
