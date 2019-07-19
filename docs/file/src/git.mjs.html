@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/git.mjs | gitcards</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/git.mjs~Git.html">Git</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/git.mjs</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">const { exec } = require(&apos;child_process&apos;);
+
+const HUB_PATH = `${__dirname}/hub`;
+
+const GitErrorCodes = {
+  BadConfigFile: &apos;BadConfigFile&apos;,
+  AuthenticationFailed: &apos;AuthenticationFailed&apos;,
+  NoUserNameConfigured: &apos;NoUserNameConfigured&apos;,
+  NoUserEmailConfigured: &apos;NoUserEmailConfigured&apos;,
+  NoRemoteRepositorySpecified: &apos;NoRemoteRepositorySpecified&apos;,
+  NotAGitRepository: &apos;NotAGitRepository&apos;,
+  NotAtRepositoryRoot: &apos;NotAtRepositoryRoot&apos;,
+  Conflict: &apos;Conflict&apos;,
+  StashConflict: &apos;StashConflict&apos;,
+  UnmergedChanges: &apos;UnmergedChanges&apos;,
+  PushRejected: &apos;PushRejected&apos;,
+  RemoteConnectionError: &apos;RemoteConnectionError&apos;,
+  DirtyWorkTree: &apos;DirtyWorkTree&apos;,
+  CantOpenResource: &apos;CantOpenResource&apos;,
+  GitNotFound: &apos;GitNotFound&apos;,
+  CantCreatePipe: &apos;CantCreatePipe&apos;,
+  CantAccessRemote: &apos;CantAccessRemote&apos;,
+  RepositoryNotFound: &apos;RepositoryNotFound&apos;,
+  RepositoryIsLocked: &apos;RepositoryIsLocked&apos;,
+  BranchNotFullyMerged: &apos;BranchNotFullyMerged&apos;,
+  NoRemoteReference: &apos;NoRemoteReference&apos;,
+  InvalidBranchName: &apos;InvalidBranchName&apos;,
+  BranchAlreadyExists: &apos;BranchAlreadyExists&apos;,
+  NoLocalChanges: &apos;NoLocalChanges&apos;,
+  NoStashFound: &apos;NoStashFound&apos;,
+  LocalChangesOverwritten: &apos;LocalChangesOverwritten&apos;,
+  NoUpstreamBranch: &apos;NoUpstreamBranch&apos;,
+  IsInSubmodule: &apos;IsInSubmodule&apos;,
+  WrongCase: &apos;WrongCase&apos;,
+  CantLockRef: &apos;CantLockRef&apos;,
+  CantRebaseMultipleBranches: &apos;CantRebaseMultipleBranches&apos;,
+  PatchDoesNotApply: &apos;PatchDoesNotApply&apos;,
+  NoPathFound: &apos;NoPathFound&apos;,
+};
+
+
+/**
+ *
+ * @param {String} stderr console error output
+ * @return {String} code error or output if error unknown
+ */
+const getGitErrorCode = (stderr) =&gt; {
+  if (/Another git process seems to be running in this repository|If no other git process is currently running/.test(stderr)) {
+    return GitErrorCodes.RepositoryIsLocked;
+  }
+  if (/Authentication failed/.test(stderr)) {
+    return GitErrorCodes.AuthenticationFailed;
+  }
+  if (/Not a git repository/i.test(stderr)) {
+    return GitErrorCodes.NotAGitRepository;
+  }
+  if (/bad config file/.test(stderr)) {
+    return GitErrorCodes.BadConfigFile;
+  }
+  if (/cannot make pipe for command substitution|cannot create standard input pipe/.test(stderr)) {
+    return GitErrorCodes.CantCreatePipe;
+  }
+  if (/Repository not found/.test(stderr)) {
+    return GitErrorCodes.RepositoryNotFound;
+  }
+  if (/unable to access/.test(stderr)) {
+    return GitErrorCodes.CantAccessRemote;
+  }
+  if (/branch &apos;.+&apos; is not fully merged/.test(stderr)) {
+    return GitErrorCodes.BranchNotFullyMerged;
+  }
+  if (/Couldn&apos;t find remote ref/.test(stderr)) {
+    return GitErrorCodes.NoRemoteReference;
+  }
+  if (/A branch named &apos;.+&apos; already exists/.test(stderr)) {
+    return GitErrorCodes.BranchAlreadyExists;
+  }
+  if (/&apos;.+&apos; is not a valid branch name/.test(stderr)) {
+    return GitErrorCodes.InvalidBranchName;
+  }
+  if (/Please,? commit your changes or stash them/.test(stderr)) {
+    return GitErrorCodes.DirtyWorkTree;
+  }
+  return stderr;
+};
+
+
+/**
+ * Git class helps you use some git comands in node js
+ * this class uses hub binary
+ *
+ */
+
+class Git {
+  /**
+   *
+   * @param {String} dir
+   * @param {Object} env environment variables like tokens where the key is the variable name
+   */
+  constructor(dir, env) {
+    this.dir = dir;
+    this.env = {
+      ...env,
+      HOME: process.env.HOME,
+      PATH: process.env.PATH,
+    };
+  }
+
+  /**
+   *
+   * @param {[String]} cmd the command to be executed no need to specify git
+   * @param {String} prefix default is git but you can set it to &apos;&apos;
+   * @return {String} the stdout string
+   *
+   */
+  async exec(cmd, prefix = &apos;git&apos;) {
+    return new Promise((resolve, reject) =&gt; {
+      exec([prefix, ...cmd].join(&apos; &apos;), {
+        cwd: this.dir,
+        env: this.env,
+      }, (error, stdout, stderr) =&gt; {
+        // console.log({ stdout, stderr });
+
+        if (error) {
+          reject(getGitErrorCode(stderr));
+          return;
+        }
+        resolve(stdout);
+      });
+    });
+  }
+
+  /**
+   * Executes a hub cmd
+   * @param {[String]} cmd
+   */
+
+  async hubExec(cmd) {
+    return this.exec(cmd, HUB_PATH);
+  }
+
+  /**
+   * @return {[String]}
+   */
+  async getBranches() {
+    const stdout = await this.exec([&apos;branch&apos;, &apos;--all&apos;]);
+    return stdout.split(/\n/).map(e =&gt; e.replace(/\*|\s/g, &apos;&apos;)).filter(e =&gt; !!e);
+  }
+
+  /**
+   *
+   * @param {String} name branch name
+   */
+
+  async createBrach(name) {
+    await this.exec([&apos;branch&apos;, name]);
+  }
+
+  /**
+   *
+   * @param {String} name branch name
+   * @param {boolean} force
+   */
+  async removeBranch(name, force = false) {
+    const cmd = [&apos;branch&apos;, name, &apos;--delete&apos;];
+    if (force) {
+      cmd.push(&apos;--force&apos;);
+    }
+    await this.exec(cmd);
+  }
+
+  /**
+   *
+   * @param {String} title the title of the message
+   * @param {String} message the body
+   *
+   */
+  async commit(title, message = &apos;&apos;) {
+    const cmd = [&apos;commit&apos;, &apos;-m&apos;, `&quot;${title}\n${message}&quot;`];
+    await this.exec(cmd);
+  }
+
+  /**
+   * @return {String} name of current branch
+   */
+
+  async getCurrentBranch() {
+    const stdout = await this.exec([&apos;branch&apos;, &apos;--all&apos;]);
+    return stdout
+      .split(/\n/)
+      .find(e =&gt; e.indexOf(&apos;*&apos;) !== -1)
+      .replace(/\*|\s/g, &apos;&apos;);
+  }
+
+  /**
+   *
+   * @param {[String]} flies list of files default all
+   */
+  async add(flies = [&apos;.&apos;]) {
+    await this.exec([&apos;add&apos;, ...flies]);
+  }
+
+  /**
+   * Push
+   */
+
+  async push() {
+    await this.exec([&apos;push&apos;]);
+  }
+
+  /**
+   * If name not specified uses the current branch name
+   * cmd: git push --set-upstream origin name
+   * @param {String} name
+   */
+
+  async pushUpStream(name) {
+    let branchName;
+    if (!name) {
+      branchName = await this.getCurrentBranch();
+    } else {
+      branchName = name;
+    }
+    await this.exec([&apos;push&apos;, &apos;--set-upstream&apos;, &apos;origin&apos;, branchName]);
+  }
+
+  /**
+   *
+   * @param {String} name branch name
+   * @param {boolean} create if true creates the branch
+   */
+  async checkout(name, create) {
+    const cmd = [&apos;checkout&apos;];
+    if (create) {
+      cmd.push(&apos;-b&apos;);
+    }
+    cmd.push(name);
+    await this.exec(cmd);
+  }
+
+  /**
+   *
+   * @param {String} text first line is pr title next lines are body
+   *
+   */
+  async createGithubPR(text) {
+    const cmd = [&apos;pull-request&apos;, &apos;-m&apos;, `&quot;${text}&quot;`];
+    await this.hubExec(cmd);
+  }
+
+  /**
+   * This uses the github token to clone projects
+   * @param {String} url
+   */
+
+  async cloneGitHub(url) {
+    const cmd = [&apos;clone&apos;, url];
+    return this.hubExec(cmd);
+  }
+
+  /**
+   * This uses the github token to fork project
+   * @param {String} remoteName
+   */
+  async forkGithub(remoteName) {
+    const cmd = [&apos;fork&apos;, `--remote-name=${remoteName}`];
+    return this.hubExec(cmd);
+  }
+
+  /**
+   * This uses the github token to create repo
+   * @param {String} description default empty
+   */
+
+  async createGithubRepo(description = &apos;&apos;) {
+    const cmd = [&apos;create&apos;, &apos;-d&apos;, description];
+    return this.hubExec(cmd);
+  }
+
+  /**
+   * TO DO
+   *
+   *
+   */
+  async getGraph() {
+    const cmd = [&apos;log&apos;, &apos;--all&apos;, &apos;--date-order&apos;, &apos;--source&apos;];
+    const stdout = await this.exec(cmd);
+    return stdout.trim().split(/\n/g);
+  }
+}
+
+export default Git;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
