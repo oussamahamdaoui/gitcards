@@ -1,0 +1,6 @@
+{
+  "source": "./src",
+  "includes": ["\\.js$","\\.mjs$"],
+  "destination": "./docs",
+  "plugins": [{"name": "esdoc-standard-plugin"}, {"name": "esdoc-ecmascript-proposal-plugin", "option": {"all": true}}]
+}
