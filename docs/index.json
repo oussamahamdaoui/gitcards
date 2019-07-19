@@ -1,0 +1,1230 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/git.mjs",
+    "content": "const { exec } = require('child_process');\n\nconst HUB_PATH = `${__dirname}/hub`;\n\nconst GitErrorCodes = {\n  BadConfigFile: 'BadConfigFile',\n  AuthenticationFailed: 'AuthenticationFailed',\n  NoUserNameConfigured: 'NoUserNameConfigured',\n  NoUserEmailConfigured: 'NoUserEmailConfigured',\n  NoRemoteRepositorySpecified: 'NoRemoteRepositorySpecified',\n  NotAGitRepository: 'NotAGitRepository',\n  NotAtRepositoryRoot: 'NotAtRepositoryRoot',\n  Conflict: 'Conflict',\n  StashConflict: 'StashConflict',\n  UnmergedChanges: 'UnmergedChanges',\n  PushRejected: 'PushRejected',\n  RemoteConnectionError: 'RemoteConnectionError',\n  DirtyWorkTree: 'DirtyWorkTree',\n  CantOpenResource: 'CantOpenResource',\n  GitNotFound: 'GitNotFound',\n  CantCreatePipe: 'CantCreatePipe',\n  CantAccessRemote: 'CantAccessRemote',\n  RepositoryNotFound: 'RepositoryNotFound',\n  RepositoryIsLocked: 'RepositoryIsLocked',\n  BranchNotFullyMerged: 'BranchNotFullyMerged',\n  NoRemoteReference: 'NoRemoteReference',\n  InvalidBranchName: 'InvalidBranchName',\n  BranchAlreadyExists: 'BranchAlreadyExists',\n  NoLocalChanges: 'NoLocalChanges',\n  NoStashFound: 'NoStashFound',\n  LocalChangesOverwritten: 'LocalChangesOverwritten',\n  NoUpstreamBranch: 'NoUpstreamBranch',\n  IsInSubmodule: 'IsInSubmodule',\n  WrongCase: 'WrongCase',\n  CantLockRef: 'CantLockRef',\n  CantRebaseMultipleBranches: 'CantRebaseMultipleBranches',\n  PatchDoesNotApply: 'PatchDoesNotApply',\n  NoPathFound: 'NoPathFound',\n};\n\n\n/**\n *\n * @param {String} stderr console error output\n * @return {String} code error or output if error unknown\n */\nconst getGitErrorCode = (stderr) => {\n  if (/Another git process seems to be running in this repository|If no other git process is currently running/.test(stderr)) {\n    return GitErrorCodes.RepositoryIsLocked;\n  }\n  if (/Authentication failed/.test(stderr)) {\n    return GitErrorCodes.AuthenticationFailed;\n  }\n  if (/Not a git repository/i.test(stderr)) {\n    return GitErrorCodes.NotAGitRepository;\n  }\n  if (/bad config file/.test(stderr)) {\n    return GitErrorCodes.BadConfigFile;\n  }\n  if (/cannot make pipe for command substitution|cannot create standard input pipe/.test(stderr)) {\n    return GitErrorCodes.CantCreatePipe;\n  }\n  if (/Repository not found/.test(stderr)) {\n    return GitErrorCodes.RepositoryNotFound;\n  }\n  if (/unable to access/.test(stderr)) {\n    return GitErrorCodes.CantAccessRemote;\n  }\n  if (/branch '.+' is not fully merged/.test(stderr)) {\n    return GitErrorCodes.BranchNotFullyMerged;\n  }\n  if (/Couldn't find remote ref/.test(stderr)) {\n    return GitErrorCodes.NoRemoteReference;\n  }\n  if (/A branch named '.+' already exists/.test(stderr)) {\n    return GitErrorCodes.BranchAlreadyExists;\n  }\n  if (/'.+' is not a valid branch name/.test(stderr)) {\n    return GitErrorCodes.InvalidBranchName;\n  }\n  if (/Please,? commit your changes or stash them/.test(stderr)) {\n    return GitErrorCodes.DirtyWorkTree;\n  }\n  return stderr;\n};\n\n\n/**\n * Git class helps you use some git comands in node js\n * this class uses hub binary\n *\n */\n\nclass Git {\n  /**\n   *\n   * @param {String} dir\n   * @param {Object} env environment variables like tokens where the key is the variable name\n   */\n  constructor(dir, env) {\n    this.dir = dir;\n    this.env = {\n      ...env,\n      HOME: process.env.HOME,\n      PATH: process.env.PATH,\n    };\n  }\n\n  /**\n   *\n   * @param {[String]} cmd the command to be executed no need to specify git\n   * @param {String} prefix default is git but you can set it to ''\n   * @return {String} the stdout string\n   *\n   */\n  async exec(cmd, prefix = 'git') {\n    return new Promise((resolve, reject) => {\n      exec([prefix, ...cmd].join(' '), {\n        cwd: this.dir,\n        env: this.env,\n      }, (error, stdout, stderr) => {\n        // console.log({ stdout, stderr });\n\n        if (error) {\n          reject(getGitErrorCode(stderr));\n          return;\n        }\n        resolve(stdout);\n      });\n    });\n  }\n\n  /**\n   * Executes a hub cmd\n   * @param {[String]} cmd\n   */\n\n  async hubExec(cmd) {\n    return this.exec(cmd, HUB_PATH);\n  }\n\n  /**\n   * @return {[String]}\n   */\n  async getBranches() {\n    const stdout = await this.exec(['branch', '--all']);\n    return stdout.split(/\\n/).map(e => e.replace(/\\*|\\s/g, '')).filter(e => !!e);\n  }\n\n  /**\n   *\n   * @param {String} name branch name\n   */\n\n  async createBrach(name) {\n    await this.exec(['branch', name]);\n  }\n\n  /**\n   *\n   * @param {String} name branch name\n   * @param {boolean} force\n   */\n  async removeBranch(name, force = false) {\n    const cmd = ['branch', name, '--delete'];\n    if (force) {\n      cmd.push('--force');\n    }\n    await this.exec(cmd);\n  }\n\n  /**\n   *\n   * @param {String} title the title of the message\n   * @param {String} message the body\n   *\n   */\n  async commit(title, message = '') {\n    const cmd = ['commit', '-m', `\"${title}\\n${message}\"`];\n    await this.exec(cmd);\n  }\n\n  /**\n   * @return {String} name of current branch\n   */\n\n  async getCurrentBranch() {\n    const stdout = await this.exec(['branch', '--all']);\n    return stdout\n      .split(/\\n/)\n      .find(e => e.indexOf('*') !== -1)\n      .replace(/\\*|\\s/g, '');\n  }\n\n  /**\n   *\n   * @param {[String]} flies list of files default all\n   */\n  async add(flies = ['.']) {\n    await this.exec(['add', ...flies]);\n  }\n\n  /**\n   * Push\n   */\n\n  async push() {\n    await this.exec(['push']);\n  }\n\n  /**\n   * If name not specified uses the current branch name\n   * cmd: git push --set-upstream origin name\n   * @param {String} name\n   */\n\n  async pushUpStream(name) {\n    let branchName;\n    if (!name) {\n      branchName = await this.getCurrentBranch();\n    } else {\n      branchName = name;\n    }\n    await this.exec(['push', '--set-upstream', 'origin', branchName]);\n  }\n\n  /**\n   *\n   * @param {String} name branch name\n   * @param {boolean} create if true creates the branch\n   */\n  async checkout(name, create) {\n    const cmd = ['checkout'];\n    if (create) {\n      cmd.push('-b');\n    }\n    cmd.push(name);\n    await this.exec(cmd);\n  }\n\n  /**\n   *\n   * @param {String} text first line is pr title next lines are body\n   *\n   */\n  async createGithubPR(text) {\n    const cmd = ['pull-request', '-m', `\"${text}\"`];\n    await this.hubExec(cmd);\n  }\n\n  /**\n   * This uses the github token to clone projects\n   * @param {String} url\n   */\n\n  async cloneGitHub(url) {\n    const cmd = ['clone', url];\n    return this.hubExec(cmd);\n  }\n\n  /**\n   * This uses the github token to fork project\n   * @param {String} remoteName\n   */\n  async forkGithub(remoteName) {\n    const cmd = ['fork', `--remote-name=${remoteName}`];\n    return this.hubExec(cmd);\n  }\n\n  /**\n   * This uses the github token to create repo\n   * @param {String} description default empty\n   */\n\n  async createGithubRepo(description = '') {\n    const cmd = ['create', '-d', description];\n    return this.hubExec(cmd);\n  }\n\n  /**\n   * TO DO\n   *\n   *\n   */\n  async getGraph() {\n    const cmd = ['log', '--all', '--date-order', '--source'];\n    const stdout = await this.exec(cmd);\n    return stdout.trim().split(/\\n/g);\n  }\n}\n\nexport default Git;\n",
+    "static": true,
+    "longname": "/Users/oussamahamdaoui/Documents/gitCards/src/git.mjs",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "name": "exec",
+    "memberof": "src/git.mjs",
+    "static": true,
+    "longname": "src/git.mjs~exec",
+    "access": "public",
+    "export": false,
+    "importPath": "gitcards/src/git.mjs",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 50,
+    "kind": "variable",
+    "name": "HUB_PATH",
+    "memberof": "src/git.mjs",
+    "static": true,
+    "longname": "src/git.mjs~HUB_PATH",
+    "access": "public",
+    "export": false,
+    "importPath": "gitcards/src/git.mjs",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "variable",
+    "name": "GitErrorCodes",
+    "memberof": "src/git.mjs",
+    "static": true,
+    "longname": "src/git.mjs~GitErrorCodes",
+    "access": "public",
+    "export": false,
+    "importPath": "gitcards/src/git.mjs",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"BadConfigFile\": string, \"AuthenticationFailed\": string, \"NoUserNameConfigured\": string, \"NoUserEmailConfigured\": string, \"NoRemoteRepositorySpecified\": string, \"NotAGitRepository\": string, \"NotAtRepositoryRoot\": string, \"Conflict\": string, \"StashConflict\": string, \"UnmergedChanges\": string, \"PushRejected\": string, \"RemoteConnectionError\": string, \"DirtyWorkTree\": string, \"CantOpenResource\": string, \"GitNotFound\": string, \"CantCreatePipe\": string, \"CantAccessRemote\": string, \"RepositoryNotFound\": string, \"RepositoryIsLocked\": string, \"BranchNotFullyMerged\": string, \"NoRemoteReference\": string, \"InvalidBranchName\": string, \"BranchAlreadyExists\": string, \"NoLocalChanges\": string, \"NoStashFound\": string, \"LocalChangesOverwritten\": string, \"NoUpstreamBranch\": string, \"IsInSubmodule\": string, \"WrongCase\": string, \"CantLockRef\": string, \"CantRebaseMultipleBranches\": string, \"PatchDoesNotApply\": string, \"NoPathFound\": string}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "function",
+    "name": "getGitErrorCode",
+    "memberof": "src/git.mjs",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/git.mjs~getGitErrorCode",
+    "access": "public",
+    "export": false,
+    "importPath": "gitcards/src/git.mjs",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 47,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "stderr",
+        "description": "console error output"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": "code error or output if error unknown"
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "class",
+    "name": "Git",
+    "memberof": "src/git.mjs",
+    "static": true,
+    "longname": "src/git.mjs~Git",
+    "access": "public",
+    "export": true,
+    "importPath": "gitcards/src/git.mjs",
+    "importStyle": "Git",
+    "description": "Git class helps you use some git comands in node js\nthis class uses hub binary",
+    "lineNumber": 94,
+    "interface": false
+  },
+  {
+    "__docId__": 54,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/git.mjs~Git#constructor",
+    "access": "public",
+    "description": "",
+    "lineNumber": 100,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "dir",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "env",
+        "description": "environment variables like tokens where the key is the variable name"
+      }
+    ]
+  },
+  {
+    "__docId__": 55,
+    "kind": "member",
+    "name": "dir",
+    "memberof": "src/git.mjs~Git",
+    "static": false,
+    "longname": "src/git.mjs~Git#dir",
+    "access": "public",
+    "description": null,
+    "lineNumber": 101,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "member",
+    "name": "env",
+    "memberof": "src/git.mjs~Git",
+    "static": false,
+    "longname": "src/git.mjs~Git#env",
+    "access": "public",
+    "description": null,
+    "lineNumber": 102,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{...env: Object, \"HOME\": *, \"PATH\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "method",
+    "name": "exec",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#exec",
+    "access": "public",
+    "description": "",
+    "lineNumber": 116,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "[String]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cmd",
+        "description": "the command to be executed no need to specify git"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "prefix",
+        "description": "default is git but you can set it to ''"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": "the stdout string"
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "method",
+    "name": "hubExec",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#hubExec",
+    "access": "public",
+    "description": "Executes a hub cmd",
+    "lineNumber": 138,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "[String]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cmd",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "method",
+    "name": "getBranches",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#getBranches",
+    "access": "public",
+    "description": "",
+    "lineNumber": 145,
+    "return": {
+      "nullable": null,
+      "types": [
+        "[String]"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 60,
+    "kind": "method",
+    "name": "createBrach",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#createBrach",
+    "access": "public",
+    "description": "",
+    "lineNumber": 155,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "branch name"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "name": "removeBranch",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#removeBranch",
+    "access": "public",
+    "description": "",
+    "lineNumber": 164,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "branch name"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "force",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "commit",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#commit",
+    "access": "public",
+    "description": "",
+    "lineNumber": 178,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "title",
+        "description": "the title of the message"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "message",
+        "description": "the body"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "getCurrentBranch",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#getCurrentBranch",
+    "access": "public",
+    "description": "",
+    "lineNumber": 187,
+    "return": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": "name of current branch"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 64,
+    "kind": "method",
+    "name": "add",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#add",
+    "access": "public",
+    "description": "",
+    "lineNumber": 199,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "[String]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "flies",
+        "description": "list of files default all"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 65,
+    "kind": "method",
+    "name": "push",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#push",
+    "access": "public",
+    "description": "Push",
+    "lineNumber": 207,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 66,
+    "kind": "method",
+    "name": "pushUpStream",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#pushUpStream",
+    "access": "public",
+    "description": "If name not specified uses the current branch name\ncmd: git push --set-upstream origin name",
+    "lineNumber": 217,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "name": "checkout",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#checkout",
+    "access": "public",
+    "description": "",
+    "lineNumber": 232,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "branch name"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "create",
+        "description": "if true creates the branch"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 68,
+    "kind": "method",
+    "name": "createGithubPR",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#createGithubPR",
+    "access": "public",
+    "description": "",
+    "lineNumber": 246,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "text",
+        "description": "first line is pr title next lines are body"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 69,
+    "kind": "method",
+    "name": "cloneGitHub",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#cloneGitHub",
+    "access": "public",
+    "description": "This uses the github token to clone projects",
+    "lineNumber": 256,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "url",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "method",
+    "name": "forkGithub",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#forkGithub",
+    "access": "public",
+    "description": "This uses the github token to fork project",
+    "lineNumber": 265,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "remoteName",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "method",
+    "name": "createGithubRepo",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#createGithubRepo",
+    "access": "public",
+    "description": "This uses the github token to create repo",
+    "lineNumber": 275,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "description",
+        "description": "default empty"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "method",
+    "name": "getGraph",
+    "memberof": "src/git.mjs~Git",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/git.mjs~Git#getGraph",
+    "access": "public",
+    "description": "TO DO",
+    "lineNumber": 285,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "kind": "index",
+    "content": "# GitCards work in progress\n\nGitcards is a free and open source git ui/console tool that will help integration with GitHub and Azure (more platforms could be added later)\nThe project runs fully on OSX (all functions were tested on Mojave)\n\n## Run the project\n\nClone the repo and run `npm i`\n\n## Contribution\n\nCheck projects section in github and select a TO DO\n\n\n\n",
+    "longname": "/Users/oussamahamdaoui/Documents/gitCards/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"gitcards\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"test\": \"jest\",\n    \"build-doc\":\"esdoc\"\n  },\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"dependencies\": {\n    \"@forgjs/noframework\": \"^1.0.8\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"graph-data-structure\": \"^1.8.0\",\n    \"jest\": \"^24.8.0\"\n  },\n  \"devDependencies\": {\n    \"eslint\": \"^5.16.0\",\n    \"eslint-config-airbnb-base\": \"^13.2.0\",\n    \"eslint-plugin-import\": \"^2.18.0\"\n  }\n}\n",
+    "longname": "/Users/oussamahamdaoui/Documents/gitCards/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]
