@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build-doc":"esdoc"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@forgjs/noframework": "^1.0.8",
+    "esdoc": "^1.1.0",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "esdoc-standard-plugin": "^1.0.0",
+    "graph-data-structure": "^1.8.0",
     "jest": "^24.8.0"
   },
   "devDependencies": {
